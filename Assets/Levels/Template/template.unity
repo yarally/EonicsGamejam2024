@@ -1239,8 +1239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   authorName: T.E.R. Yarally
   levelName: Template
-  levelDescription: This level has no special features! test test test test test
-    test test
+  levelDescription: This level has no special features!
   displayBox: {fileID: 1894840365}
 --- !u!4 &1048309793
 Transform:
