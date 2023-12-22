@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Lib.player
+namespace Lib.Player
 {
     public abstract class AbstractPlayerController : MonoBehaviour
     {
@@ -9,6 +9,7 @@ namespace Lib.player
         [SerializeField] protected float jumpHeight;
         [SerializeField] protected KeyCode jumpKey;
         [SerializeField] protected KeyCode actionKey;
+        [SerializeField] private GameObject interactionTrigger;
         protected Rigidbody2D rb;
         protected float moveDirection;
         protected PlayerState currentState = PlayerState.OnGround;
@@ -77,7 +78,9 @@ namespace Lib.player
          */
         protected virtual void Jump()
         {
-            rb.velocity = new Vector2(rb.velocity.x, (float)Math.Sqrt(2.0f * rb.gravityScale * jumpHeight * 10));
+            // The physics engine and my math don't work out exactly, this correction makes the jump height more predictable for lower jumps
+            const float correction = 0.55f;
+            rb.velocity = new Vector2(rb.velocity.x, (float)Math.Sqrt(2.0f * rb.gravityScale * jumpHeight * (10f + correction)));
             currentState = PlayerState.Jumping;
         }
 
@@ -91,7 +94,15 @@ namespace Lib.player
             currentState = PlayerState.OnGround;
         }
 
-        protected abstract void OnAction();
+        /**
+         * This method is called when the action button is pressed (LMB by default)
+         */
+        protected virtual void OnAction()
+        {
+            var objRef = Instantiate(interactionTrigger, transform);
+            objRef.transform.position += Vector3.up * 0.5f;
+            Destroy(objRef, 0.1f);
+        }
 
         protected enum PlayerState
         {

@@ -1,4 +1,4 @@
-using Lib.player;
+using Lib.Player;
 using UnityEngine;
 
 namespace Levels.Template
@@ -37,6 +37,7 @@ namespace Levels.Template
 
         protected override void OnAction()
         {
+            base.OnAction();
             Debug.Log("Action key pressed!");
         }
     }
