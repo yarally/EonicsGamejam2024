@@ -26,7 +26,7 @@ namespace Lib.Main_Menu
             foreach (var s in guid)
             {
                 var path = AssetDatabase.GUIDToAssetPath(s);
-                if (path.Contains("Main Menu")) continue;
+                if (path.Contains("Main Menu") || path.Contains("template")) continue;
                 var btn = Instantiate(levelBtn, levelsBox.transform).GetComponent<Button>();
                 btn.onClick.AddListener(() => LoadLevel(path));
                 btn.GetComponentInChildren<TextMeshProUGUI>().text = path.Split("/").Last().Split(".")[0].FirstCharacterToUpper();
