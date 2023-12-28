@@ -44,7 +44,7 @@ namespace Lib.Main_Menu
             {
                 layerDepth = 0;
             }
-            var target = new Vector3(-1280 * layerDepth, _myRectTransform.localPosition.y, _myRectTransform.localPosition.z);
+            var target = new Vector3(-1680 * layerDepth, _myRectTransform.localPosition.y, _myRectTransform.localPosition.z);
             if (Mathf.Abs(_myRectTransform.localPosition.x - target.x) < 0.1f) return;
             var move = Vector3.MoveTowards(_myRectTransform.localPosition, target, Time.deltaTime  * 4800);
             _myRectTransform.localPosition = move;
