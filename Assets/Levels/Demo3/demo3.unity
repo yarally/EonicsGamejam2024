@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 220276027}
   - component: {fileID: 220276026}
   m_Layer: 0
-  m_Name: Jp (3)
+  m_Name: JanPixel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 416028811}
   - component: {fileID: 416028813}
   m_Layer: 0
-  m_Name: Jp
+  m_Name: JanPixel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -749,7 +749,7 @@ GameObject:
   - component: {fileID: 455822818}
   - component: {fileID: 455822817}
   m_Layer: 0
-  m_Name: Jp (2)
+  m_Name: JanPixel (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2314,8 +2314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   authorName: T.E.R. Yarally
   levelName: Demo Three
-  levelDescription: In this demo level, gravity is reversed! Oh and JP is trying
-    to kill you!
+  levelDescription: In this demo level, gravity is reversed! Oh and Jan-Pixel Jansen
+    is trying to kill you!
   displayBox: {fileID: 6934818248453452289}
   darkPanel: {fileID: 5789608523252156470}
 --- !u!4 &1048309793
