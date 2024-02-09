@@ -11,7 +11,7 @@ namespace Lib.Door
         {
             if (other.CompareTag("Player") && CanOpen())
             {
-                Debug.Log("Level end!");
+                FindFirstObjectByType<LevelController>().NextLevel();
             }
         }
 

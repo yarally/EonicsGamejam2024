@@ -1,5 +1,9 @@
 using System.Collections;
+using System.Linq;
+using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Lib
 {
@@ -36,6 +40,30 @@ namespace Lib
             if (_lights) return;
             _lights = true;
             darkPanel.SetActive(true);
+        }
+
+        public void NextLevel()
+        {
+            var guid = AssetDatabase.FindAssets($"t:scene");
+            var hit = false;
+            foreach (var s in guid.Where(s => AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial")).Concat(guid.Where(s => !AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial"))))
+            {
+                var path = AssetDatabase.GUIDToAssetPath(s);
+                if (path.Contains("Main Menu") || path.Contains("template")) continue;
+                if (EditorSceneManager.GetActiveScene().path == path)
+                {
+                    hit = true;
+                    continue;
+                }
+
+                if (hit)
+                {
+                    EditorSceneManager.LoadSceneInPlayMode(path, new LoadSceneParameters(LoadSceneMode.Single));
+                    return;
+                }
+            }
+
+            SceneManager.LoadScene("Main Menu");
         }
     }
 }

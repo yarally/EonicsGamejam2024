@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,7 @@ namespace Lib.Player
         [SerializeField] protected float jumpHeight;
         [SerializeField] protected KeyCode jumpKey;
         [SerializeField] protected KeyCode actionKey;
-        [SerializeField] private GameObject interactionTrigger;
+        [SerializeField] protected GameObject interactionTrigger;
         protected Rigidbody2D rb;
         protected float moveDirection;
         protected PlayerState currentState = PlayerState.OnGround;
@@ -93,7 +94,7 @@ namespace Lib.Player
             }
             // The physics engine and my math don't work out exactly, this correction makes the jump height more predictable for lower jumps
             const float correction = 0.55f;
-            rb.velocity = new Vector2(rb.velocity.x, (float)Math.Sqrt(2.0f * rb.gravityScale * jumpHeight * (10f + correction)));
+            rb.velocity = new Vector2(rb.velocity.x, (float)Math.Sqrt(2.0f * Mathf.Abs(rb.gravityScale) * jumpHeight * (10f + correction)));
             currentState = PlayerState.Jumping;
         }
 
@@ -109,7 +110,7 @@ namespace Lib.Player
 
         public virtual void Hurt()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            EditorSceneManager.LoadSceneInPlayMode(SceneManager.GetActiveScene().path, new LoadSceneParameters(LoadSceneMode.Single));
         }
 
         /**

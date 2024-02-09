@@ -23,7 +23,7 @@ namespace Lib.Main_Menu
         {
             _myRectTransform = GetComponent<RectTransform>();
             var guid = AssetDatabase.FindAssets($"t:scene");
-            foreach (var s in guid)
+            foreach (var s in guid.Where(s => AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial")).Concat(guid.Where(s => !AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial"))))
             {
                 var path = AssetDatabase.GUIDToAssetPath(s);
                 if (path.Contains("Main Menu") || path.Contains("template")) continue;
