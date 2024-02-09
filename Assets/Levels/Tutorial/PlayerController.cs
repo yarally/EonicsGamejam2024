@@ -34,6 +34,11 @@ namespace Levels.Tutorial
         {
             base.Land();
         }
+        
+        public override void Hurt()
+        {
+            base.Hurt();
+        }
 
         protected override void OnAction()
         {

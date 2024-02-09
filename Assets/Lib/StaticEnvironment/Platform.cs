@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Lib.StaticEnvironment
@@ -23,6 +24,22 @@ namespace Lib.StaticEnvironment
         private void Update()
         {
             _collider.enabled = (_player.transform.position.y > _yPos + 0.45f);
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.transform.parent = transform;
+            }
+        }
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                other.transform.parent = null;
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Lib.Player
 {
@@ -13,10 +14,14 @@ namespace Lib.Player
         protected Rigidbody2D rb;
         protected float moveDirection;
         protected PlayerState currentState = PlayerState.OnGround;
+        protected Animator animator;
+        public KeyCode JumpKey => jumpKey;
+        public KeyCode ActionKey => actionKey;
 
         protected virtual void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            animator = GetComponentInChildren<Animator>();
         }
 
         protected virtual void Update()
@@ -59,7 +64,9 @@ namespace Lib.Player
          */
         protected virtual void Move()
         {
-            rb.velocity = new Vector2(moveDirection * speed, rb.velocity.y);
+            var v = new Vector2(moveDirection * speed, rb.velocity.y);
+            rb.velocity = v;
+            animator.SetFloat("speed", v.magnitude);
         }
 
         /**
@@ -78,6 +85,12 @@ namespace Lib.Player
          */
         protected virtual void Jump()
         {
+            // This is a check to see if the player is even capable of jumping at the moment (e.g. not if he is on a ladder)
+            if (rb.gravityScale <= 0.001f)
+            {
+                currentState = PlayerState.OnGround;
+                return;
+            }
             // The physics engine and my math don't work out exactly, this correction makes the jump height more predictable for lower jumps
             const float correction = 0.55f;
             rb.velocity = new Vector2(rb.velocity.x, (float)Math.Sqrt(2.0f * rb.gravityScale * jumpHeight * (10f + correction)));
@@ -92,6 +105,11 @@ namespace Lib.Player
         protected virtual void Land()
         {
             currentState = PlayerState.OnGround;
+        }
+
+        public virtual void Hurt()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         /**
@@ -110,6 +128,7 @@ namespace Lib.Player
             Jump,
             Jumping,
             Falling,
+            Dead
         }
     }
 }

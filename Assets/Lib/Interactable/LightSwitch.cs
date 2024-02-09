@@ -10,7 +10,8 @@ namespace Lib.Interactable
         protected override void OnInteract()
         {
             if (!isOn) return;
-            FindFirstObjectByType<AbstractDoorController>().TurnOffLight();
+            FindFirstObjectByType<AbstractDoorController>().OpenDoor();
+            FindFirstObjectByType<LevelController>().TurnOffLights();
             isOn = false;
             GetComponent<SpriteRenderer>().sprite = altSprite;
         }

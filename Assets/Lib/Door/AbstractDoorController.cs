@@ -4,8 +4,8 @@ namespace Lib.Door
 {
     public abstract class AbstractDoorController : MonoBehaviour
     {
-        [SerializeField] private GameObject darkPanel;
-        private bool _light;
+        [SerializeField] private Sprite altSprite;
+        private bool _opened;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -17,18 +17,18 @@ namespace Lib.Door
 
         protected virtual bool CanOpen()
         {
-            return _light;
+            return _opened;
         }
 
         /**
-         * This method is called by the LightSwitch if the player interacts with it. This also opens the door to the
+         * This method is called by the LightSwitch if the player interacts with it. This opens the door to the
          * next level.
          */
-        public void TurnOffLight()
+        public void OpenDoor()
         {
-            if (_light) return;
-            _light = true;
-            darkPanel.SetActive(true);
+            if (_opened) return;
+            _opened = true;
+            GetComponent<SpriteRenderer>().sprite = altSprite;
         }
     }
 }

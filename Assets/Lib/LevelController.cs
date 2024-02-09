@@ -7,8 +7,10 @@ namespace Lib
     {
         [SerializeField] private string authorName;
         [SerializeField] private string levelName;
-        [SerializeField][TextArea] private string levelDescription;
+        [SerializeField] [TextArea] private string levelDescription;
         [SerializeField] private TypeWriter displayBox;
+        [SerializeField] private GameObject darkPanel;
+        private bool _lights;
 
         private void Start()
         {
@@ -24,6 +26,16 @@ namespace Lib
             displayBox.Show("[" + levelName + "]\nBy " + authorName);
             yield return new WaitForSeconds(5f);
             displayBox.Show(levelDescription);
+        }
+
+        /**
+         * This method is called by the LightSwitch if the player interacts with it. This turns off the lights.
+         */
+        public void TurnOffLights()
+        {
+            if (_lights) return;
+            _lights = true;
+            darkPanel.SetActive(true);
         }
     }
 }
