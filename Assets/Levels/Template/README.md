@@ -93,6 +93,6 @@ Next, commit and push your code:
 ```bash
 git add .
 git commit -m "Commit message"
-git push origin firstname_lastname
+git push origin firstname_lastnamee
 ```
 You're done! If your level compiles and works correctly, I will add it to the final version of the game :)
