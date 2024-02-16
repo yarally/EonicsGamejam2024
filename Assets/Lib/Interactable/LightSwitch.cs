@@ -1,3 +1,4 @@
+using System.Collections;
 using Lib.Door;
 using UnityEngine;
 
@@ -10,10 +11,16 @@ namespace Lib.Interactable
         protected override void OnInteract()
         {
             if (!isOn) return;
-            FindFirstObjectByType<AbstractDoorController>().OpenDoor();
+            GetComponent<AudioSource>().Play();
             FindFirstObjectByType<LevelController>().TurnOffLights();
+            Invoke(nameof(OpenDoor), 0.5f);
             isOn = false;
             GetComponent<SpriteRenderer>().sprite = altSprite;
+        }
+
+        protected void OpenDoor()
+        {
+            FindFirstObjectByType<AbstractDoorController>().OpenDoor();
         }
     }
 }

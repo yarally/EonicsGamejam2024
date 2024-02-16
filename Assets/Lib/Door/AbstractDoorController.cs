@@ -27,6 +27,7 @@ namespace Lib.Door
         public void OpenDoor()
         {
             if (_opened) return;
+            GetComponent<AudioSource>().Play();
             _opened = true;
             GetComponent<SpriteRenderer>().sprite = altSprite;
         }

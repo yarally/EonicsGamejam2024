@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Levels.Demo3
+namespace Lib.Hazard
 {
     public class Jp : MonoBehaviour
     {

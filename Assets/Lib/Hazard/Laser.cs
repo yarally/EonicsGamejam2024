@@ -1,8 +1,7 @@
-using System;
 using Lib.Player;
 using UnityEngine;
 
-namespace Levels.Demo3
+namespace Lib.Hazard
 {
     public class Laser : MonoBehaviour
     {

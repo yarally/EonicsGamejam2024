@@ -23,7 +23,6 @@ namespace Levels.Demo2
 
         protected override void Jump()
         {
-            Debug.Log("test");
             _jumpCount--;
             base.Jump();
         }
