@@ -1,3 +1,4 @@
+using Lib.Music;
 using UnityEngine;
 
 namespace Lib.Door
@@ -12,6 +13,7 @@ namespace Lib.Door
             if (other.CompareTag("Player") && CanOpen())
             {
                 FindFirstObjectByType<LevelController>().NextLevel();
+                MainMusicPlayer.Instance.MainMusic();
             }
         }
 
@@ -30,6 +32,7 @@ namespace Lib.Door
             GetComponent<AudioSource>().Play();
             _opened = true;
             GetComponent<SpriteRenderer>().sprite = altSprite;
+            MainMusicPlayer.Instance.AltMusic();
         }
     }
 }
