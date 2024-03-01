@@ -79,7 +79,6 @@ namespace Levels.HBL_Expert
                 return;
             if (!isInHurtAnimation)
                 StartCoroutine(hurtAnimation());
-            Debug.Log(percentage.ToString() + " hit!");
         }
 
         private IEnumerator hurtAnimation()

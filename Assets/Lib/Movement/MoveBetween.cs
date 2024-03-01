@@ -5,20 +5,20 @@ namespace Lib.Movement
 {
     public class MoveBetween : MonoBehaviour
     {
-        [SerializeField] private Transform obj;
-        [SerializeField] private Transform from;
-        [SerializeField] private Transform to;
-        [SerializeField] private float speed;
+        [SerializeField] protected Transform obj;
+        [SerializeField] protected Transform from;
+        [SerializeField] protected Transform to;
+        [SerializeField] protected float speed;
 
-        private Transform _target;
+        protected Transform _target;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _target = to;
         }
 
         // Update is called once per frame
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             if (Vector3.Distance(obj.position, _target.position) < 0.01f)
             {

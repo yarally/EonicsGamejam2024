@@ -177,7 +177,6 @@ public class WindowsController : MonoBehaviour
     {
         if (currentState != States.Moving)
             return;
-        Debug.Log($"{transform.position} -> {goal}");
         tf.position = Vector3.MoveTowards(tf.position, goal, speed*Time.fixedDeltaTime);
         if (Vector3.Distance(transform.position, goal) <= Single.Epsilon)
         {
@@ -203,9 +202,7 @@ public class WindowsController : MonoBehaviour
         goal = currentAttack.GetChild((start + 1) % 2).position;
         
         currentState = States.Waiting;
-        StartCoroutine(ShowHourGlass());
-        
-        Debug.Log(goal);
+        StartCoroutine(ShowHourGlass());it 
     }
 
     private IEnumerator ShowHourGlass()

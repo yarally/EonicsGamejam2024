@@ -6,27 +6,27 @@ namespace Lib.StaticEnvironment
     [RequireComponent(typeof(BoxCollider2D))]
     public class Platform : MonoBehaviour
     {
-        private BoxCollider2D _collider;
-        private Transform _player;
-        private float _yPos;
+        protected BoxCollider2D _collider;
+        protected Transform _player;
+        protected float _yPos;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             _collider = GetComponent<BoxCollider2D>();
             _yPos = transform.position.y;
         }
 
-        private void Start()
+        protected virtual void Start()
         {
             _player = GameObject.FindWithTag("Player").transform;
         }
 
-        private void Update()
+        protected virtual void Update()
         {
             _collider.enabled = (_player.transform.position.y > _yPos + 0.45f);
         }
 
-        private void OnCollisionEnter2D(Collision2D other)
+        protected virtual void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
@@ -34,7 +34,7 @@ namespace Lib.StaticEnvironment
             }
         }
 
-        private void OnCollisionExit2D(Collision2D other)
+        protected virtual void OnCollisionExit2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Player"))
             {

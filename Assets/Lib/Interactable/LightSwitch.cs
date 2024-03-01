@@ -18,7 +18,7 @@ namespace Lib.Interactable
             GetComponent<SpriteRenderer>().sprite = altSprite;
         }
 
-        protected void OpenDoor()
+        protected virtual void OpenDoor()
         {
             FindFirstObjectByType<AbstractDoorController>().OpenDoor();
         }

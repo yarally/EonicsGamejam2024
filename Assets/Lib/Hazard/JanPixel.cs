@@ -5,20 +5,20 @@ namespace Lib.Hazard
 {
     public class Jp : MonoBehaviour
     {
-        [SerializeField] private float delay;
-        [SerializeField] private GameObject laser;
-        [SerializeField] private float interval;
-        [SerializeField] private Sprite sprite;
-        [SerializeField] private Sprite altSprite;
-        private SpriteRenderer _sr;
+        [SerializeField] protected float delay;
+        [SerializeField] protected GameObject laser;
+        [SerializeField] protected float interval;
+        [SerializeField] protected Sprite sprite;
+        [SerializeField] protected Sprite altSprite;
+        protected SpriteRenderer _sr;
 
-        private void Start()
+        protected virtual void Start()
         {
             _sr = GetComponent<SpriteRenderer>();
             StartCoroutine(Shoot());
         }
 
-        private IEnumerator Shoot()
+        protected virtual IEnumerator Shoot()
         {
             yield return new WaitForSeconds(delay);
             while (true)
