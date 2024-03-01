@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Lib.Hazard
 {
+    /**
+     * Jan Pixel is here to kill you! This enemy will spawn [Laser] game objects on an interval that you can adjust
+     * inside the object inspector after dropping the prefab in your scene.
+     */
     public class Jp : MonoBehaviour
     {
         [SerializeField] protected float delay;

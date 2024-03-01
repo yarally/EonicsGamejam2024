@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Lib.Hazard
 {
+    /**
+     * if (Player touches) then: Player dies!
+     */
     [RequireComponent(typeof(Collider2D))]
     public class TouchAndDie : MonoBehaviour
     {

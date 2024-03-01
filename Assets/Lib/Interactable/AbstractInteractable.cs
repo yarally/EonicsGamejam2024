@@ -1,8 +1,12 @@
-using System;
 using UnityEngine;
 
 namespace Lib.Interactable
 {
+    /**
+     * This script can be implemented for objects that your player should be able to click. It spawns a green indicator
+     * above the object when the player is near, and provides a handle for the interaction event when the player presses
+     * the interact button.
+     */
     public abstract class AbstractInteractable : MonoBehaviour
     {
         private GameObject _indicator;

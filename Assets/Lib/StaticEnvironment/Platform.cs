@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Lib.StaticEnvironment
 {
+    /**
+     * The platform looks at the player y-position and disables its own collider when the player is below it.
+     */
     [RequireComponent(typeof(BoxCollider2D))]
     public class Platform : MonoBehaviour
     {

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Lib.Hazard
 {
+    /**
+     * The laser looks for the player position when it is spawned in. It then moves in a horizontal line in that direction. 
+     */
     public class Laser : MonoBehaviour
     {
         [SerializeField] protected float speed;

@@ -3,6 +3,10 @@ using UnityEngine;
 
 namespace Lib.Movement
 {
+    /**
+     * Makes an object (obj) move between two positions (from, to). The positions can be set inside the object inspector by providing two
+     * other game objects.
+     */
     public class MoveBetween : MonoBehaviour
     {
         [SerializeField] protected Transform obj;

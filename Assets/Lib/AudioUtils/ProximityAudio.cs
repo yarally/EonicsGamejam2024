@@ -2,6 +2,10 @@ using UnityEngine;
 
 namespace Lib.AudioUtils
 {
+    /**
+     * This script can be placed on any GameObject that contains an AudioSource script. The volume of the audio will
+     * then be dynamically updated base on the proximity to the player.
+     */
     [RequireComponent(typeof(AudioSource))]
     public class ProximityAudio : MonoBehaviour
     {

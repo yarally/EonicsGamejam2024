@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Lib.StaticEnvironment
 {
+    /**
+     * Disables gravity and manages the player velocity to simulate the behaviours of a ladder.
+     */
     public class Ladder : MonoBehaviour
     {
         protected Rigidbody2D _playerRb;
