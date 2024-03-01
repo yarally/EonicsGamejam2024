@@ -202,7 +202,7 @@ public class WindowsController : MonoBehaviour
         goal = currentAttack.GetChild((start + 1) % 2).position;
         
         currentState = States.Waiting;
-        StartCoroutine(ShowHourGlass());it 
+        StartCoroutine(ShowHourGlass());
     }
 
     private IEnumerator ShowHourGlass()
