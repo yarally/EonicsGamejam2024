@@ -43,7 +43,7 @@ namespace Lib.StaticEnvironment
             }
             else
             {
-                _playerRb.velocity = new Vector2(_playerRb.velocity.x, -2f);
+                _playerRb.velocity = new Vector2(_playerRb.velocity.x, -1);
             }
         }
     }
