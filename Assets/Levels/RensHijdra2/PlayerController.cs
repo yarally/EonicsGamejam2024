@@ -1,7 +1,7 @@
 using Lib.Player;
 using UnityEngine;
 
-namespace Levels.RensHijdra
+namespace Levels.RensHijdra2
 {
     public class PlayerController : AbstractPlayerController
     {
