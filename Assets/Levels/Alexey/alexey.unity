@@ -3923,8 +3923,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authorName: Aliaksei Lizunou
-  levelName: Demo One
-  levelDescription: This is a demo level using the publicly available assets
+  levelName: Too many ladders
+  levelDescription: There are 2 ways to the lightswitch, but only one way back...
   displayBox: {fileID: 1448707847}
   darkPanel: {fileID: 247733675}
 --- !u!4 &1048309793
