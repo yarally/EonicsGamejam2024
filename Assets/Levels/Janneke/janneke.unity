@@ -1078,6 +1078,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: e1cbace79e1fcd24e89b273544a518ba, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
       value: 0.001
       objectReference: {fileID: 0}
