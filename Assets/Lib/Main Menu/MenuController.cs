@@ -1,14 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Button = UnityEngine.UI.Button;
+using UnityEngine.UI;
 
 namespace Lib.Main_Menu
 {
@@ -22,14 +16,17 @@ namespace Lib.Main_Menu
         private void Awake()
         {
             _myRectTransform = GetComponent<RectTransform>();
-            var guid = AssetDatabase.FindAssets($"t:scene");
-            foreach (var s in guid.Where(s => AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial")).Concat(guid.Where(s => !AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial"))))
+
+            for (var buildIndex = 1; buildIndex < SceneManager.sceneCountInBuildSettings; buildIndex++)
             {
-                var path = AssetDatabase.GUIDToAssetPath(s);
-                if (path.Contains("Main Menu") || path.Contains("template")) continue;
+                var path = SceneUtility.GetScenePathByBuildIndex(buildIndex);
+                var slash = path.LastIndexOf('/');
+                var scenePath = path.Substring(slash + 1);
+                var dot = scenePath.LastIndexOf('.');
                 var btn = Instantiate(levelBtn, levelsBox.transform).GetComponent<Button>();
-                btn.onClick.AddListener(() => LoadLevel(path));
-                btn.GetComponentInChildren<TextMeshProUGUI>().text = path.Split("/").Last().Split(".")[0].FirstCharacterToUpper();
+                var index = buildIndex;
+                btn.onClick.AddListener(() => LoadLevel(index));
+                btn.GetComponentInChildren<TextMeshProUGUI>().text = scenePath[..dot].FirstCharacterToUpper();
             }
         }
 
@@ -50,9 +47,9 @@ namespace Lib.Main_Menu
             _myRectTransform.localPosition = move;
         }
 
-        private static void LoadLevel(string path)
+        private static void LoadLevel(int index)
         {
-            EditorSceneManager.LoadSceneInPlayMode(path, new LoadSceneParameters(LoadSceneMode.Single));
+            SceneManager.LoadSceneAsync(index);
         }
     }
 }

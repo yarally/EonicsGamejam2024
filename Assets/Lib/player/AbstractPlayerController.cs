@@ -1,6 +1,5 @@
 using System;
 using Lib.Music;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -112,7 +111,7 @@ namespace Lib.Player
         public virtual void Hurt()
         {
             MainMusicPlayer.Instance.MainMusic();
-            EditorSceneManager.LoadSceneInPlayMode(SceneManager.GetActiveScene().path, new LoadSceneParameters(LoadSceneMode.Single));
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
         }
 
         /**

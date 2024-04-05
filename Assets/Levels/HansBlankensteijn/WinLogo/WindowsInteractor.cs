@@ -1,15 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Lib.Interactable;
-using Lib.Door;
-using Lib.Player;
-using TMPro;
-using UnityEditor.UI;
-using UnityEngine.UI;
-using UnityEngine.Video;
-using Random = UnityEngine.Random;
+using UnityEngine;
 
 namespace Levels.HBL_Expert
 {

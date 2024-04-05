@@ -4,9 +4,45 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: 
+  m_Scenes:
   - enabled: 1
     path: Assets/Main Menu.unity
     guid: 840cab795210c194e81ba5341c4d6504
+  - enabled: 1
+    path: Assets/Levels/Tutorial/Tutorial.unity
+    guid: a32795d7d5850da4aa57e33d288ce20e
+  - enabled: 1
+    path: Assets/Levels/Demo1/demo1.unity
+    guid: 7cc6c8cab839a4848be67f20360056bb
+  - enabled: 1
+    path: Assets/Levels/Demo2/demo2.unity
+    guid: cd626a3173e694642a3b86eb215f6a3d
+  - enabled: 1
+    path: Assets/Levels/Demo3/demo3.unity
+    guid: a9aa066bda1e7da4c990b313249be273
+  - enabled: 1
+    path: Assets/Levels/Alexey/alexey.unity
+    guid: 0de29ffd46053604497ee9ac867b9ebe
+  - enabled: 1
+    path: Assets/Levels/DaniSchadenberg/DaniSchadenberg.unity
+    guid: e24b0b5ba73304a4cb32c7d63abc5bfe
+  - enabled: 1
+    path: Assets/Levels/Janneke/janneke.unity
+    guid: f5875569d6ba944d2bda6e6e248b06d5
+  - enabled: 1
+    path: Assets/Levels/Ilhan.Cicilia/IlhanCicilia.unity
+    guid: 810ca52a7df9d734fb9210552c614d6a
+  - enabled: 1
+    path: Assets/Levels/HBLGamejam/HBLGamejam.unity
+    guid: a5a0229b156517f4bb17900a56e4f321
+  - enabled: 1
+    path: Assets/Levels/RaushanMangal/RaushanMangal.unity
+    guid: 390b867235a01f84a987b4cb9dad4ae5
+  - enabled: 1
+    path: Assets/Levels/RensHijdra/rens_hijdra.unity
+    guid: 092d6edc3400445a817fbac419679994
+  - enabled: 1
+    path: Assets/Levels/HansBlankensteijn/hans_blankensteijn.unity
+    guid: 7581166cef415d04cb08d35a18d1f634
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

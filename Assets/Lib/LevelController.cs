@@ -1,7 +1,5 @@
+using System;
 using System.Collections;
-using System.Linq;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,6 +17,14 @@ namespace Lib
         private void Start()
         {
             StartCoroutine(ShowText());
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SceneManager.LoadSceneAsync("Main Menu");
+            }
         }
 
         /**
@@ -44,26 +50,14 @@ namespace Lib
 
         public void NextLevel()
         {
-            var guid = AssetDatabase.FindAssets($"t:scene");
-            var hit = false;
-            foreach (var s in guid.Where(s => AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial")).Concat(guid.Where(s => !AssetDatabase.GUIDToAssetPath(s).Contains("Tutorial"))))
+            var newIndex = SceneManager.GetActiveScene().buildIndex + 1;
+            if (newIndex < SceneManager.sceneCountInBuildSettings)
             {
-                var path = AssetDatabase.GUIDToAssetPath(s);
-                if (path.Contains("Main Menu") || path.Contains("template")) continue;
-                if (EditorSceneManager.GetActiveScene().path == path)
-                {
-                    hit = true;
-                    continue;
-                }
-
-                if (hit)
-                {
-                    EditorSceneManager.LoadSceneInPlayMode(path, new LoadSceneParameters(LoadSceneMode.Single));
-                    return;
-                }
+                SceneManager.LoadSceneAsync(newIndex);
+                return;
             }
 
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadSceneAsync("Main Menu");
         }
     }
 }
