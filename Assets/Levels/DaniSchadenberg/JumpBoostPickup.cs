@@ -20,8 +20,14 @@ namespace Levels.DaniSchadenberg
             if (other.CompareTag("Player"))
             {
                 other.GetComponent<PlayerController>().setJumpheight(5);
-                Destroy(gameObject);
+                gameObject.SetActive(false);
+                Invoke(nameof(EnableGameObject), 3f);
             }
+        }
+
+        private void EnableGameObject()
+        {
+            gameObject.SetActive(true);
         }
     }
 
