@@ -334,8 +334,12 @@ PrefabInstance:
       value: JanPixel (6)
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1.6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1091,8 +1095,12 @@ PrefabInstance:
       value: JanPixel (4)
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1793,10 +1801,10 @@ PrefabInstance:
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: laser
       value: 
-      objectReference: {fileID: 8640558436393214662, guid: a08a4d7203009304c923887c339780ae, type: 3}
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1.6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2588,15 +2596,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1140286026}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3196379385251832143, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_Name
       value: JanPixel (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1.9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2616,15 +2628,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2643,11 +2655,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
---- !u!4 &1006267833 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
-  m_PrefabInstance: {fileID: 1006267832}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1026956528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2661,8 +2668,12 @@ PrefabInstance:
       value: JanPixel (5)
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1.1
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3044,7 +3055,6 @@ Transform:
   - {fileID: 867984186}
   - {fileID: 1245768874}
   - {fileID: 1669563590}
-  - {fileID: 1006267833}
   - {fileID: 822817429}
   - {fileID: 1048309793}
   - {fileID: 7559067764521372970}
@@ -4758,8 +4768,12 @@ PrefabInstance:
       value: JanPixel (3)
       objectReference: {fileID: 0}
     - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
+      propertyPath: laser
+      value: 
+      objectReference: {fileID: 8640558436393214662, guid: 9500396cc70b79141a9f94840d3b55b1, type: 3}
+    - target: {fileID: 4801592187818236498, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: interval
-      value: 1.6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7493873270420982056, guid: 37e0e8294983edc478e1bf751e5895e0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6447,6 +6461,7 @@ SceneRoots:
   - {fileID: 1140286026}
   - {fileID: 333337178}
   - {fileID: 819387558}
+  - {fileID: 1006267832}
   - {fileID: 754283451}
   - {fileID: 1798686147}
   - {fileID: 517251593}
